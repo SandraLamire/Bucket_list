@@ -1,0 +1,66 @@
+body {
+    background: linear-gradient(#000000, #132135) fixed center center;
+    background-size: cover;
+    color: #EEE;
+    margin : 2%;
+    font-family: Arial, sans-serif;
+}
+
+.entete{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo{
+    width: 20vh;
+    height: 20vh;
+    /*inverser les couleurs du logo*/
+    filter: invert();
+}
+
+h1{
+    margin-left: 10vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #BC956B;
+}
+
+body > .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header img {
+    height: 70px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-right: 1rem; /*pourcentage de taille en fonction du zoom 1 rem = 10px pour zoom = 100%*/
+}

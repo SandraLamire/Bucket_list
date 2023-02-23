@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} My WishList
+{% endblock %}
+
+{% block body %}
+    <h2>My wish List</h2>
+    <section class="wish-list">
+        {% for wish in wishes %}
+            <article>
+                <a href="{{ path('wish_showDetail', {'id': wish.id}) }}">
+                    {{ wish.title }}
+                </a>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
+{% block styleCss %}
+    <style>
+        body {
+            background-image: linear-gradient(60deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+            url("{{ asset('img/index.png') }}");
+        }
+    </style>
+{% endblock %}
+
+
