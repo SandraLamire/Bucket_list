@@ -8,6 +8,7 @@
     <h2>Wish's details</h2>
     <div class="wish-details-infos">
         <h2>{{ wish.title }}</h2>
+        <div>Category : {{ wish.category.name }}</div>
         <div>Description : {{ wish.description }}</div>
         <div>{{ wish.author ~ ' ~ ' ~ wish.dateCreated | date ('d-m-Y H:i') }}</div>
     </div>

@@ -39,6 +39,20 @@ class WishRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByPublishedWishes() {
+        $qb = $this->createQueryBuilder('w');
+        $qb
+            // sélectionner les wishes publiés (:isPublished = paramètre perso setté à la ligne suivante)
+            ->andWhere('w.isPublished = :isPublished')
+            ->setParameter('isPublished', true)
+            // requête personnalisée
+            ->leftJoin('w.category', 'cat')
+            ->addSelect('cat')
+            ->addOrderBy('w.dateCreated', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
+}
+
 //    /**
 //     * @return Wish[] Returns an array of Wish objects
 //     */
@@ -63,4 +77,4 @@ class WishRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+

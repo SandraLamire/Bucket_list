@@ -23,6 +23,14 @@
     {% include 'bodyfragments/header.html.twig' %}
 <div class="container">
     <main>
+        {# afficher messages flash stockés #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
         {% block body %}Main par défaut{% endblock %}
     </main>
     {% include 'bodyfragments/footer.html.twig' %}

@@ -10,7 +10,8 @@
         {% for wish in wishes %}
             <article>
                 <a href="{{ path('wish_showDetail', {'id': wish.id}) }}">
-                    {{ wish.title }}
+                    {# ou {{ wish.category }} récupère le nom grâce au __toString dans Entity/Category #}
+                    {{ wish.title }} ~ [{{ wish.category.name }}]
                 </a>
             </article>
         {% endfor %}
