@@ -47,6 +47,7 @@ class Wish
 
     // fetch: 'EAGER' permet de remplacer la jointure personnalisée dans WishRepository
     // #[ORM\ManyToOne(inversedBy: 'wishes', fetch: 'EAGER')]
+    // inversedBy = category mappée avec les wishes
     #[ORM\ManyToOne(inversedBy: 'wishes')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;

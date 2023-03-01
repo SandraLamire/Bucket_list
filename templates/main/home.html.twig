@@ -5,7 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Bienvenue sur mon site</h2>
-    <img src="{{ asset('img/memePasPeur.jpg') }}">
+    <h2>Bienvenue sur mon site
+        {% if app.user %}
+        {{ app.user.pseudo | capitalize}}
+        {% endif %}
+    </h2>
+    <img src="{{ asset('img/memePasPeur.jpg') alt="une image"}}">
 {% endblock %}
 

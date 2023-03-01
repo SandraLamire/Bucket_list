@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Category;
+use App\Entity\User;
 use App\Entity\Wish;
 use App\Repository\CategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -34,8 +35,7 @@ class WishType extends AbstractType
                 }
             ])
             ->add('description', TextareaType::class, ['required' =>false])
-            ->add('author', TextType::class)
-        ;
+            ->add('author', TextType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
