@@ -7,6 +7,8 @@
 {% block body %}
     {% embed 'view/form/whisform.html.twig' with {'wishForm' : wishUpdateForm} %}
         {% block formTitle %} Update a wish {% endblock %}
-        {% block buttonLabel %} Update a wish {% endblock %}
+        {% block buttonLabel %}
+            <a href="{{ path('wish_update', {'id' : wish.id}) }}">Update a wish</a>
+        {% endblock %}
     {% endembed %}
 {% endblock %}
